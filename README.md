@@ -1,2 +1,0 @@
-# nexosolutions
-emprendimiento
