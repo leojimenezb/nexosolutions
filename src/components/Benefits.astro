@@ -1,0 +1,55 @@
+---
+const benefits = [
+  {
+    title: 'Soluciones confiables',
+    description: 'Implementamos tecnologías probadas y estables que garantizan el funcionamiento óptimo de tu negocio.',
+    icon: '🛡️'
+  },
+  {
+    title: 'Atención personalizada',
+    description: 'Cada proyecto es único. Nos adaptamos a tus necesidades específicas con un enfoque totalmente personalizado.',
+    icon: '🤝'
+  },
+  {
+    title: 'Respuesta rápida',
+    description: 'Entendemos que el tiempo es dinero. Ofrecemos tiempos de respuesta ágiles y eficiencia en cada entrega.',
+    icon: '⚡'
+  },
+  {
+    title: 'Calidad y compromiso',
+    description: 'Nos dedicamos a superar expectativas con entregas de alta calidad y un compromiso total con tu éxito.',
+    icon: '✨'
+  }
+];
+---
+
+<section id="beneficios" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#0F1B3D] mb-4">
+        ¿Por qué elegirnos?
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Nos diferenciamos por nuestro compromiso con la excelencia y nuestra dedicación al éxito de cada cliente.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {benefits.map((benefit, index) => (
+        <div
+          class="group bg-slate-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl border border-slate-100 hover:border-[#5AA832]/30"
+        >
+          <div class="w-16 h-16 bg-[#5AA832]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#5AA832] transition-colors duration-300">
+            <span class="text-3xl group-hover:text-white transition-colors duration-300">{benefit.icon}</span>
+          </div>
+          <h3 class="text-xl font-semibold text-[#0F1B3D] mb-3 group-hover:text-[#5AA832] transition-colors duration-300">
+            {benefit.title}
+          </h3>
+          <p class="text-slate-600 leading-relaxed">
+            {benefit.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

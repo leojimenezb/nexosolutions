@@ -1,0 +1,75 @@
+---
+const services = [
+  {
+    title: 'Desarrollo de páginas web',
+    description: 'Creamos sitios web modernos, responsivos y optimizados para SEO que representan profesionalmente tu marca en el mundo digital.',
+    icon: '🌐',
+    features: ['Diseño responsivo', 'SEO optimizado', 'Velocidad de carga', 'Integración con redes sociales']
+  },
+  {
+    title: 'Desarrollo web y software',
+    description: 'Desarrollamos aplicaciones web personalizadas y software a medida que automatizan procesos y mejoran la eficiencia operativa.',
+    icon: '💻',
+    features: ['Aplicaciones web', 'Software a medida', 'Integración de APIs', 'Panel de administración']
+  },
+  {
+    title: 'Automatización y control',
+    description: 'Implementamos soluciones de automatización que reducen tiempos operativos y mejoran el control de tus procesos empresariales.',
+    icon: '⚙️',
+    features: ['Automatización de procesos', 'Control de inventario', 'Gestión documental', 'Integración de sistemas']
+  },
+  {
+    title: 'Armado y actualización de equipos',
+    description: 'Ofrecemos servicios de armado de computadoras y actualización de hardware para garantizar el mejor rendimiento de tu infraestructura.',
+    icon: '🔧',
+    features: ['Armado de PCs', 'Actualización de hardware', 'Mantenimiento preventivo', 'Optimización de rendimiento']
+  },
+  {
+    title: 'Asesoría tecnológica',
+    description: 'Brindamos consultoría especializada para ayudarte a tomar las mejores decisiones tecnológicas para tu negocio.',
+    icon: '💡',
+    features: ['Consultoría TI', 'Planificación tecnológica', 'Auditoría de sistemas', 'Recomendaciones estratégicas']
+  }
+];
+---
+
+<section id="servicios" class="py-20 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#0F1B3D] mb-4">
+        Nuestros Servicios
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Soluciones tecnológicas integrales diseñadas para impulsar el crecimiento de tu negocio.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service, index) => (
+        <div
+          class="group bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-2xl border border-slate-100 hover:border-[#5AA832]/50 transform hover:-translate-y-2"
+        >
+          <div class="w-16 h-16 bg-gradient-to-br from-[#5AA832] to-[#3E7B21] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+            <span class="text-3xl">{service.icon}</span>
+          </div>
+          <h3 class="text-xl font-semibold text-[#0F1B3D] mb-3 group-hover:text-[#5AA832] transition-colors duration-300">
+            {service.title}
+          </h3>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            {service.description}
+          </p>
+          <ul class="space-y-2">
+            {service.features.map((feature) => (
+              <li class="flex items-center text-sm text-slate-600">
+                <svg class="w-4 h-4 mr-2 text-[#5AA832]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

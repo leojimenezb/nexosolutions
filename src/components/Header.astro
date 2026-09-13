@@ -1,0 +1,61 @@
+---
+const navigation = [
+  { name: 'Inicio', href: '#inicio' },
+  { name: 'Beneficios', href: '#beneficios' },
+  { name: 'Servicios', href: '#servicios' },
+  { name: 'Proceso', href: '#proceso' },
+  { name: 'Contacto', href: '#contacto' },
+];
+
+const siteName = import.meta.env.PUBLIC_SITE_NAME || 'NEXO Soluciones';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="#inicio" class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-[#5AA832] rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-xl">{siteName.charAt(0)}</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-lg font-bold text-[#0F1B3D] leading-tight">{siteName.split(' ')[0]}</span>
+            <span class="text-sm font-medium text-[#5AA832] leading-tight">{siteName.split(' ').slice(1).join(' ')}</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        {navigation.map((item) => (
+          <a
+            href={item.href}
+            class="text-slate-600 hover:text-[#5AA832] transition-colors duration-200 font-medium"
+          >
+            {item.name}
+          </a>
+        ))}
+        <a
+          href="#contacto"
+          class="bg-[#5AA832] hover:bg-[#3E7B21] text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"
+        >
+          Contactar
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button
+          type="button"
+          class="text-slate-600 hover:text-[#5AA832] p-2"
+          aria-label="Abrir menú"
+        >
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>

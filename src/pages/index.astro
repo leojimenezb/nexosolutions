@@ -1,0 +1,25 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Benefits from "../components/Benefits.astro";
+import Services from "../components/Services.astro";
+import Process from "../components/Process.astro";
+import BusinessTypes from "../components/BusinessTypes.astro";
+import CTA from "../components/CTA.astro";
+import Footer from "../components/Footer.astro";
+
+const siteName = import.meta.env.PUBLIC_SITE_NAME || 'NEXO Soluciones';
+const siteTagline = import.meta.env.PUBLIC_SITE_TAGLINE || 'Tecnología que impulsa tu negocio';
+---
+
+<MainLayout title={`${siteName} - ${siteTagline}`}>
+  <Header />
+  <Hero />
+  <Benefits />
+  <Services />
+  <Process />
+  <BusinessTypes />
+  <CTA />
+  <Footer />
+</MainLayout>

@@ -1,0 +1,81 @@
+---
+const processSteps = [
+  {
+    step: '01',
+    title: 'Diagnóstico',
+    description: 'Analizamos tus necesidades actuales y evaluamos la infraestructura tecnológica existente.',
+    icon: '🔍'
+  },
+  {
+    step: '02',
+    title: 'Propuesta',
+    description: 'Presentamos soluciones personalizadas con presupuesto detallado y timeline de implementación.',
+    icon: '📋'
+  },
+  {
+    step: '03',
+    title: 'Implementación',
+    description: 'Ejecutamos el proyecto con metodologías ágiles y comunicación constante.',
+    icon: '⚡'
+  },
+  {
+    step: '04',
+    title: 'Soporte continuo',
+    description: 'Brindamos mantenimiento y soporte técnico para garantizar el éxito a largo plazo.',
+    icon: '🛠️'
+  }
+];
+---
+
+<section id="proceso" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#0F1B3D] mb-4">
+        Cómo trabajamos
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Un proceso estructurado y transparente que garantiza resultados exitosos.
+      </p>
+    </div>
+
+    <div class="relative">
+      <!-- Connection Line (Desktop) -->
+      <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#5AA832] via-[#1A4AE8] to-[#0F1B3D] transform -translate-y-1/2 z-0"></div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+        {processSteps.map((step, index) => (
+          <div class="relative">
+            <div class="bg-white rounded-2xl p-8 text-center border border-slate-100 hover:border-[#5AA832]/30 hover:shadow-xl transition-all duration-300 group">
+              <!-- Step Number -->
+              <div class="w-16 h-16 bg-gradient-to-br from-[#5AA832] to-[#3E7B21] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <span class="text-white font-bold text-xl">{step.step}</span>
+              </div>
+
+              <!-- Icon -->
+              <div class="text-4xl mb-4">{step.icon}</div>
+
+              <!-- Content -->
+              <h3 class="text-xl font-semibold text-[#0F1B3D] mb-3 group-hover:text-[#5AA832] transition-colors duration-300">
+                {step.title}
+              </h3>
+              <p class="text-slate-600 leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+
+            <!-- Mobile Connector -->
+            {index < processSteps.length - 1 && (
+              <div class="lg:hidden flex justify-center mt-4">
+                <div class="w-8 h-8 bg-[#5AA832] rounded-full flex items-center justify-center">
+                  <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

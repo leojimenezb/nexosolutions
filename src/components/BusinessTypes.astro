@@ -1,0 +1,76 @@
+---
+const businessTypes = [
+  {
+    title: 'Emprendedores',
+    description: 'Soluciones digitales para lanzar y hacer crecer tu nuevo emprendimiento.',
+    icon: '🚀',
+    solutions: ['Landing pages', 'E-commerce básico', 'Presencia digital', 'Automatización de ventas']
+  },
+  {
+    title: 'Oficinas',
+    description: 'Tecnología para optimizar procesos y mejorar la productividad empresarial.',
+    icon: '🏢',
+    solutions: ['Sistemas de gestión', 'Redes corporativas', 'Soporte TI', 'Seguridad informática']
+  },
+  {
+    title: 'Comercios',
+    description: 'Herramientas tecnológicas para mejorar la experiencia de tus clientes.',
+    icon: '🏪',
+    solutions: ['Puntos de venta', 'Control de inventario', 'Marketing digital', 'Gestión de clientes']
+  },
+  {
+    title: 'Profesionistas',
+    description: 'Soluciones para potenciar tu práctica profesional y servicio al cliente.',
+    icon: '👨‍💼',
+    solutions: ['Sitios web profesionales', 'Agenda digital', 'Gestión de pacientes/clientes', 'Facturación electrónica']
+  },
+  {
+    title: 'PyMES',
+    description: 'Infraestructura tecnológica escalable para el crecimiento de tu empresa.',
+    icon: '📈',
+    solutions: ['ERP personalizado', 'Integración de sistemas', 'Consultoría tecnológica', 'Soporte empresarial']
+  }
+];
+---
+
+<section class="py-20 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#0F1B3D] mb-4">
+        Casos de uso
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Soluciones adaptadas a diferentes tipos de negocios y necesidades específicas.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {businessTypes.map((business, index) => (
+        <div
+          class="group bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-2xl border border-slate-100 hover:border-[#1A4AE8]/50 transform hover:-translate-y-2"
+        >
+          <div class="w-16 h-16 bg-gradient-to-br from-[#1A4AE8] to-[#0F1B3D] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+            <span class="text-3xl">{business.icon}</span>
+          </div>
+          <h3 class="text-xl font-semibold text-[#0F1B3D] mb-3 group-hover:text-[#1A4AE8] transition-colors duration-300">
+            {business.title}
+          </h3>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            {business.description}
+          </p>
+          <div class="space-y-2">
+            <p class="text-sm font-medium text-slate-700">Soluciones:</p>
+            {business.solutions.map((solution) => (
+              <div class="flex items-center text-sm text-slate-600">
+                <svg class="w-4 h-4 mr-2 text-[#1A4AE8]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                {solution}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
