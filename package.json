@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "astro dev --host",
     "build": "astro build",
-    "build:prod": "astro build",
-    "preview": "astro preview",
-    "preview:prod": "astro preview",
+    "build:prod": "cp .htaccess dist/ && astro build",
+    "preview": "astro preview --host",
+    "preview:prod": "astro preview --host",
     "check": "astro check"
   },
   "dependencies": {
